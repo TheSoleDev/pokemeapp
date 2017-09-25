@@ -8,7 +8,8 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/vendor/jquery.mobile-1.4.5.css" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/theme.css" />
+
         <link rel="stylesheet" type="text/css" href="css/map_marker.css" />
 
         <title>PokeMeApp</title>
@@ -21,30 +22,38 @@
     <body>
 
         <div data-role="page" id="map-screen">
+
+            <div data-role="header" id="applicationHeader" data-theme="b" data-position="fixed" data-id="navStay">
+                <a href="index.html" data-ajax="false" class="btn-back ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l"> Back</a>              
+                <h1 class="ui-title" role="heading" aria-level="1"><img src="img/small_logo.png" width="40%"></h1>
+                <!-- <a href="setting.html" data-ajax="false" class=" ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right "><i class="fa fa-hand-o-right" aria-hidden="true"></i> Poke Me</a> -->
+                <!-- <a href="#" id="btn-save-location" data-ajax="false" class=" ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-check">Save</a> -->
+            </div>
+
+            <div role="main" class="" data-position="fixed" style="text-align: center;">
+                <form class="ui-filterable">
+                    <div style="display: inline-block; width: 65%;">
+                        <input id="geocomplete" type="text" placeholder="Type in an address" value="" />
+                    </div>
+                    <div style="display: inline-block; width: 20%;">
+                        <a href="#" id="find" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-search btn-show-all"> Find</a>
+                    </div>
+                </form>
+                <ul id="list-branch" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-input="#inset-autocomplete-input"></ul>
+                <div id="map_canvas" class="map rounded"></div>
+            </div>
+            
             <div class="map_canvas"></div>
-    <form>
-      <input id="geocomplete" type="text" placeholder="Type in an address" value="111 Broadway, New York, NY" />
-      <input id="find" type="button" value="find" />
-      
-      <fieldset>
-        <label>Latitude</label>
-        <input name="lat" type="text" value="">
-      
-        <label>Longitude</label>
-        <input name="lng" type="text" value="">
-      
-        <label>Formatted Address</label>
-        <input name="formatted_address" type="text" value="">
-      </fieldset>
-      
-      <a id="reset" href="#" style="display:none;">Reset Marker</a>
-    </form>
-        </div>
+            <fieldset class="mt-10">
+                <label><strong>Marker Name</strong></label>
+                <input name="txt_name" id="txt_name" type="text" value="" placeholder="Type name of marker">
+                <button type="button" id="btn-submit-contact" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-check btn-blue">Save Marker</button>
+            </fieldset>
 
-
-        <!-- Load map assets at bottom for performance -->
-
+            <input name="lat" id="lat" type="hidden" value="">
+            <input name="lng" id="lng" type="hidden" value="">
         
+        <!-- Load map assets at bottom for performance --> 
         <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAisFGMulIw6HHs-50UnGY7iO1a2IFdWvU"></script>
         <script type="text/javascript" src="js/vendor/jquery.gmap.js"></script>
         <script type="text/javascript" src="js/vendor/jquery.geocomplete.min.js"></script>
