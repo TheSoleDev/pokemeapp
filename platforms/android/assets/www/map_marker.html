@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/vendor/jquery.mobile-1.4.5.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/map_marker.css" />
+
+        <title>PokeMeApp</title>
+                <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>        
+            
+        <script type="text/javascript" src="js/vendor/jquery-1.11.3.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.mobile-1.4.5.js"></script>  
+    </head>
+    <body>
+
+        <div data-role="page" id="map-screen">
+            <div class="map_canvas"></div>
+    <form>
+      <input id="geocomplete" type="text" placeholder="Type in an address" value="111 Broadway, New York, NY" />
+      <input id="find" type="button" value="find" />
+      
+      <fieldset>
+        <label>Latitude</label>
+        <input name="lat" type="text" value="">
+      
+        <label>Longitude</label>
+        <input name="lng" type="text" value="">
+      
+        <label>Formatted Address</label>
+        <input name="formatted_address" type="text" value="">
+      </fieldset>
+      
+      <a id="reset" href="#" style="display:none;">Reset Marker</a>
+    </form>
+        </div>
+
+
+        <!-- Load map assets at bottom for performance -->
+
+        
+        <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAisFGMulIw6HHs-50UnGY7iO1a2IFdWvU"></script>
+        <script type="text/javascript" src="js/vendor/jquery.gmap.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.geocomplete.min.js"></script>
+        
+        <script type="text/javascript" src="js/vendor/infobox_packed.js"></script>
+
+     
+        <script type="text/javascript" src="js/vendor/jquery.ui.map.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.ui.map.services.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.ui.map.extensions.js"></script>
+        <script type="text/javascript" src="js/map_marker.js"></script>
+      
+        <script type="text/javascript">
+
+        </script>
+    </body>
+</html>
